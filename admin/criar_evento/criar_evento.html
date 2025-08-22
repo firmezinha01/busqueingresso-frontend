@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Evento</title>
+    <link rel="stylesheet" href="../criar_evento/criar_evento.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <div class="container">
+
+            <img class="Logo" src="img/Logo Busque.png" alt="Logo do Site" onclick="clicarLogo()">
+
+            <h1>Criar Evento</h1>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Nome do Evento:</label>
+                    <input type="text" id="eventName" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventImage">Imagem do Evento:</label>
+                    <input type="file" id="eventImage">
+                </div>
+                <div class="form-group">
+                    <label for="eventCategory">Categoria:</label>
+                    <select id="eventCategory">
+                        <option value="">Selecione</option>
+                        <option value="categoria1">Show</option>
+                        <option value="categoria2">Teatro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Data de Início:</label>
+                    <input type="date" id="eventDate">
+                </div>
+                <div class="form-group">
+                    <label for="eventTime">Hora de Início:</label>
+                    <input type="time" id="eventTime">
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Descrição:</label>
+                    <textarea id="eventDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Local:</label>
+                    <input type="text" id="eventLocation">
+                </div>
+                <div class="buttons">
+                    <button type="button" class="save">Salvar como Rascunho</button>
+                    <button type="submit" class="publish">Publicar Evento</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p><b> Busque Ingressos Soluções S.A. © Copyright 2025 · CNPJ: 00.000.000/0001-00 </b></p>
+        <p></b> Avenida Paulista, 1028 2º andar - Blue, São Paulo/SP - 00000-000 </b></p>
+    </footer>
+
+    <script src="./criar_evento.js"></script>
+
+</body>
+
+</html>

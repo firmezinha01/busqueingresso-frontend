@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Busque Ingressos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <img class="Logo" src="img/Logo Busque.png" alt="Logo do Site">
+
+    <section id="btn" class="btn-pesquisar">
+      <input type="text" placeholder="Busque Eventos Aqui">
+    </section>
+
+    <nav>
+      <ul>
+        <li><a href="#" onclick="criarEventos()">Criar eventos</a></li>
+        <li><a href="#" onclick="meusEventos()">Meus eventos</a></li>
+        <li><a href="#" onclick="meusIngressos()">Meus Ingressos</a></li>
+        <li><a href="#" onclick="cadastro()">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="btn-show">
+      <button class="botao" onclick="scrollToSection('teatro')">Teatro</button>
+      <button class="botao" onclick="scrollToSection('show')">Show</button>
+      <button class="botao" data-section="rodeio" onclick="scrollToSection('rodeio')">Rodeio</button>
+      <button class="botao" onclick="scrollToSection('esporte')">Esporte</button>
+    </div>
+
+    <!-- Eventos em Destaque -->
+    <section class="eventos">
+      <h1>Eventos em Destaque</h1>
+      <div class="evento-lista">
+
+        <div class="evento">
+          <img src="img/show da banda.jpeg" alt="" class="evento-destaque">
+          <h2>Show da Banda</h2>
+          <p>Guarulhos/SP</p>
+          <h3>Sábado 07 Junho às 14:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/feira de tecnologia.jpeg" alt="" class="evento-destaque">
+          <h2>Feira de Tecnologia</h2>
+          <p>São Paulo/SP</p>
+          <h3>Sábado 07 Junho às 14:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/patrulha caniana.jpeg" alt="" class="evento-destaque">
+          <h2>Show Patrulha Canina</h2>
+          <p>São Paulo/SP</p>
+          <h3>Sábado 07 Junho às 14:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/feira de negocios.jpeg" alt="" class="evento-destaque">
+          <h2>Feira de Negócios</h2>
+          <p>São Paulo/SP</p>
+          <h3>Sábado 07 Junho às 14:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/frank aguiar.jpeg" alt="" class="evento-destaque">
+          <h2>Show Frank Aguiar</h2>
+          <p>São Paulo/SP</p>
+          <h3>Sábado 07 Junho às 14:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="eventos">
+      <h1>Festas e Shows</h1>
+      <div class="evento-lista">
+
+        <div class="evento">
+          <img src="img/so track boa.jpeg" alt="" class="evento-destaque">
+          <h2>Só Track Boa Festival</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 07 Junho às 16:30hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/tribe.jpeg" alt="" class="evento-destaque">
+          <h2>Tribe</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 07 Junho às 16:30hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/playground.jpeg" alt="" class="evento-destaque">
+          <h2>Playground</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 07 Junho às 16:30hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/xxxperience.jpeg" alt="" class="evento-destaque">
+          <h2>Xxxperience</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 07 Junho às 16:30hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/festival eletronico.jpeg" alt="" class="evento-destaque">
+          <h2>Festival Eletrônico</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 07 Junho às 16:30hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="eventos">
+      <h1>Eventos Esportivos</h1>
+      <div class="evento-lista">
+
+        <div class="evento">
+          <img src="img/player off the week.jpeg" alt="" class="evento-destaque">
+          <h2>Player off the Week</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 14 Junho às 08:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/surfe.jpeg" alt="" class="evento-destaque">
+          <h2>Surfe</h2>
+          <p>Ubatuba</p>
+          <h3>Sábado 14 Junho às 08:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/futebol.jpeg" alt="" class="evento-destaque">
+          <h2>Futebol</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 14 Junho às 08:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/skste.jpeg" alt="" class="evento-destaque">
+          <h2>Skate</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 14 Junho às 08:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+        <div class="evento">
+          <img src="img/voleibol.jpeg" alt="" class="evento-destaque">
+          <h2>Voleibol</h2>
+          <p>São Paulo</p>
+          <h3>Sábado 14 Junho às 08:00hs</h3>
+          <button class="btn-compra" onclick="comprarIngresso()">Comprar Ingresso</button>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p><b> Busque Ingressos Soluções S.A. © Copyright 2025 · CNPJ: 00.000.000/0001-00 </b></p>
+    <p><b> Avenida Paulista, 1028 2º andar - Blue, São Paulo/SP - 00000-000 </b></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>

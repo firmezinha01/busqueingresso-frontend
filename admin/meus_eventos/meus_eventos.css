@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    width: 130px;
+    padding-top: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho {
+    display: flex;
+}
+
+h1 {
+    padding-left: 20px;
+    margin-top: 30px;
+    font-size: 17px;
+    color: rgb(185, 185, 185);
+}
+
+ul {
+    display: flex;
+    margin-top: 30px;
+}
+
+li {
+    font-size: 17px;
+    list-style-type: none;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: translateY(-4px);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(185, 185, 185);
+}
+
+main {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 97%;
+    height: 100vh;
+    border-radius: 5px;
+    display: flex;
+}
+
+.container-criar-eventos {
+    width: 25%;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+h2 {
+    padding: 10px;
+    font-size: 30px;
+}
+
+.criar-evento {
+    margin: 20px;
+}
+
+h3{
+    font-size: 17px;
+}
+
+button {
+    width: 180px;
+}
+
+.container-meus-eventos {
+    width: 100%;
+    padding-left: 20px;
+    border-radius: 5px;
+    margin: 8px;
+    background-color: rgb(240, 238, 238);
+}
+
+.meus-eventos {
+    display: flex;
+    justify-content: end;
+}
+
+h4 {
+    margin-top: 25px;
+    padding-right: 380px;
+}
+
+.container-criar-eventos button {
+    background: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    margin: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: rgb(185, 185, 185);
+    margin-top: 2rem;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    padding-left: 0;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .container-criar-eventos {
+    width: 90%;
+    padding-top: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .criar-evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-criar-eventos button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 14px;
+  }
+
+  .container-meus-eventos {
+    width: 90%;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .meus-eventos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h4 {
+    padding-right: 0;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
