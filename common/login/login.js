@@ -28,7 +28,7 @@ async function logar(event) {
 }
 
 function cadastreSe() {
-  window.location.href = "/common/cadastro/cadastro.html";
+  window.location.href = "/cadastro/cadastro.html";
 }
 
 function clicarLogo() {
