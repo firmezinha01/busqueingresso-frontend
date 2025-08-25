@@ -5,6 +5,8 @@ function clicarLogo() {
 document.getElementById('cadastroForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
+   console.log('Formulário enviado!'); 
+
   const senha = document.getElementById('senha').value;
   const confSenha = document.getElementById('conf_senha').value;
   const mensagem = document.getElementById('mensagem');
@@ -22,8 +24,32 @@ document.getElementById('cadastroForm').addEventListener('submit', async (e) => 
     telefone: document.getElementById('telefone').value,
     endereco: document.getElementById('endereco').value,
     username: document.getElementById('username').value,
-    senha: senha
+    senha: senha,
+    termos: document.getElementById('termos').checked
   };
+
+const nomesCampos = {
+  nome: 'Nome',
+  data_nascimento: 'Data de Nascimento',
+  cpf: 'CPF',
+  email: 'Email',
+  telefone: 'Telefone',
+  endereco: 'Endereço',
+  username: 'Username',
+  senha: 'Senha',
+  termos: 'Aceite dos Termos'
+};
+
+for (const [key, value] of Object.entries(dados)) {
+  if (key === 'termos' && !value) {
+    mensagem.textContent = `Você deve aceitar os Termos de Uso.`;
+    return;
+  } else if (key !== 'termos' && (!value || value.trim() === '')) {
+    mensagem.textContent = `O campo "${nomesCampos[key]}" é obrigatório.`;
+    return;
+  }
+}
+
 
   try {
     const resposta = await fetch('https://busqueingresso-backend.onrender.com/users', {

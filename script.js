@@ -42,7 +42,6 @@ function comprarIngresso() {
   }
 }
 
-
 function criarEventos() {
   window.location.href = "/admin/criar_evento/criar_evento.html";
 }
