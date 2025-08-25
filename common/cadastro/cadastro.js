@@ -1,57 +1,19 @@
-// // script.js
-// document.getElementById("cadastroForm").addEventListener("submit", function(event) {
-//     event.preventDefault();
-
-//     let senha = document.getElementById("senha").value;
-//     let confSenha = document.getElementById("conf_senha").value;
-//     let cpf = document.getElementById("cpf").value;
-//     let telefone = document.getElementById("telefone").value;
-
-//     if (senha !== confSenha) {
-//         alert("As senhas não coincidem!");
-//         return;
-//     }
-
-//     if (!validarCPF(cpf)) {
-//         alert("CPF inválido!");
-//         return;
-//     }
-
-//     if (!validarTelefone(telefone)) {
-//         alert("Telefone inválido!");
-//         return;
-//     }
-
-//     document.getElementById("mensagem").textContent = "Cadastro realizado com sucesso!";
-//     document.getElementById("mensagem").style.color = "green";
-// });
-
-// // Função para validar CPF
-// function validarCPF(cpf) {
-//     return /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf);
-// }
-
-// // Função para validar telefone
-// function validarTelefone(telefone) {
-//     return /^\(\d{2}\) \d{4,5}-\d{4}$/.test(telefone);
-// }
-
-// function clicarLogo() {
-//     window.location.href = "/index.html";
-// }
-
 function clicarLogo() {
-    window.location.href = "/index.html";
+  window.location.href = "/index.html";
 }
 
 document.getElementById('cadastroForm').addEventListener('submit', async (e) => {
-  e.preventDefault()
+  e.preventDefault();
 
-  const senha = document.getElementById('senha').value
-  const confSenha = document.getElementById('conf_senha').value
+   console.log('Formulário enviado!'); 
+
+  const senha = document.getElementById('senha').value;
+  const confSenha = document.getElementById('conf_senha').value;
+  const mensagem = document.getElementById('mensagem');
+
   if (senha !== confSenha) {
-    document.getElementById('mensagem').textContent = 'As senhas não coincidem.'
-    return
+    mensagem.textContent = 'As senhas não coincidem.';
+    return;
   }
 
   const dados = {
@@ -62,24 +24,53 @@ document.getElementById('cadastroForm').addEventListener('submit', async (e) => 
     telefone: document.getElementById('telefone').value,
     endereco: document.getElementById('endereco').value,
     username: document.getElementById('username').value,
-    senha_hash: senha 
+    senha: senha,
+    termos: document.getElementById('termos').checked
+  };
+
+const nomesCampos = {
+  nome: 'Nome',
+  data_nascimento: 'Data de Nascimento',
+  cpf: 'CPF',
+  email: 'Email',
+  telefone: 'Telefone',
+  endereco: 'Endereço',
+  username: 'Username',
+  senha: 'Senha',
+  termos: 'Aceite dos Termos'
+};
+
+for (const [key, value] of Object.entries(dados)) {
+  if (key === 'termos' && !value) {
+    mensagem.textContent = `Você deve aceitar os Termos de Uso.`;
+    return;
+  } else if (key !== 'termos' && (!value || value.trim() === '')) {
+    mensagem.textContent = `O campo "${nomesCampos[key]}" é obrigatório.`;
+    return;
   }
+}
+
 
   try {
-    const resposta = await fetch('http://localhost:3000/users', {
+    const resposta = await fetch('https://busqueingresso-backend.onrender.com/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)
-    })
+    });
 
-    const resultado = await resposta.json()
+    const resultado = await resposta.json();
+
     if (resposta.ok) {
-      document.getElementById('mensagem').textContent = 'Cadastro realizado com sucesso!'
-      document.getElementById('cadastroForm').reset()
+      mensagem.textContent = 'Cadastro realizado com sucesso!';
+      document.getElementById('cadastroForm').reset();
     } else {
-      document.getElementById('mensagem').textContent = resultado.error || 'Erro ao cadastrar.'
+      mensagem.textContent = resultado.error || 'Erro ao cadastrar.';
     }
   } catch (erro) {
-    document.getElementById('mensagem').textContent = 'Erro de conexão com o servidor.'
+    mensagem.textContent = 'Erro de conexão com o servidor.';
+    console.error('Erro:', erro);
   }
-})
+});
+
+
+
