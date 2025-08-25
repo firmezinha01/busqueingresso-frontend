@@ -1,27 +1,61 @@
+const API_URL = 'https://busqueingresso-backend.onrender.com'; 
+
+async function busque() {
+  try {
+    const response = await fetch(`${API_URL}/users`);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Erro ao acessar busque:', error);
+  }
+}
+
+busque();
+
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function filtrarEventos() {
+  const termo = document.getElementById('campoBusca').value.toLowerCase();
+  const eventos = document.querySelectorAll('.evento');
+
+  eventos.forEach(evento => {
+    const titulo = evento.querySelector('h2').textContent.toLowerCase();
+    evento.style.display = titulo.includes(termo) ? 'block' : 'none';
+  });
+}
+
+
 function comprarIngresso() {
   const usuarioLogado = localStorage.getItem("usuarioLogado");
 
   if (usuarioLogado) {
     // Redireciona para a página do ingresso
-    window.location.href = "/show_da_banda/show_da_banda.html";
+    window.location.href = "/client/comprar_ingresso/comprar_ingresso.html";
   } else {
     // Redireciona para a página de login
-    window.location.href = "/login/login.html";
+    window.location.href = "/common/login/login.html";
   }
 }
 
+
 function criarEventos() {
-  window.location.href = "/criar_evento/criar_evento.html";
+  window.location.href = "/admin/criar_evento/criar_evento.html";
 }
 
 function meusEventos() {
-  window.location.href = "/meus_eventos/meus_eventos.html";
+  window.location.href = "/admin/meus_eventos/meus_eventos.html";
 }
 
 function meusIngressos() {
-  window.location.href = "/meus_ingressos/meus_ingressos.html";
+  window.location.href = "/client/meus_ingressos/meus_ingressos.html";
 }
 
 function cadastro() {
-  window.location.href = "/cadastro/cadastro.html";
+  window.location.href = "/common/cadastro/cadastro.html";
 }
+
