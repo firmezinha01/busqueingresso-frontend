@@ -200,7 +200,7 @@ footer {
     padding: 10px;
   }
 
-   .botao[data-section="rodeio"] {
+   #rodeio {
     display: none;
   }
 

@@ -1,4 +1,5 @@
-const API_URL = 'https://busqueingresso-backend.onrender.com'; 
+// const API_URL = 'http://localhost:3000'; 
+
 
 async function busque() {
   try {
@@ -29,13 +30,12 @@ function filtrarEventos() {
   });
 }
 
-
 function comprarIngresso() {
   const usuarioLogado = localStorage.getItem("usuarioLogado");
 
   if (usuarioLogado) {
     // Redireciona para a página do ingresso
-    window.location.href = "/client/comprar_ingresso/comprar_ingresso.html";
+    window.location.href = "/common/comprar_ingresso/comprar_ingresso.html";
   } else {
     // Redireciona para a página de login
     window.location.href = "/common/login/login.html";
