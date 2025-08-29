@@ -28,7 +28,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async (e) => 
   };
 
   try {
-    const resposta = await fetch('http://127.0.0.1:3000/users', {
+    const resposta = await fetch('https://busqueingresso-backend.onrender.com/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)
