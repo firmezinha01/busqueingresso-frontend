@@ -1,18 +1,3 @@
-// const API_URL = 'http://localhost:3000'; 
-
-
-async function busque() {
-  try {
-    const response = await fetch(`${API_URL}/users`);
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error('Erro ao acessar busque:', error);
-  }
-}
-
-busque();
-
 function scrollToSection(id) {
   const section = document.getElementById(id);
   if (section) {
@@ -30,16 +15,9 @@ function filtrarEventos() {
   });
 }
 
-function comprarIngresso() {
-  const usuarioLogado = localStorage.getItem("usuarioLogado");
-
-  if (usuarioLogado) {
-    // Redireciona para a página do ingresso
-    window.location.href = "/common/comprar_ingresso/comprar_ingresso.html";
-  } else {
-    // Redireciona para a página de login
-    window.location.href = "/common/login/login.html";
-  }
+function comprarIngresso(evento) {
+  localStorage.setItem('eventoSelecionado', evento);
+  window.location.href = '/common/login/login.html';
 }
 
 function criarEventos() {
@@ -57,4 +35,5 @@ function meusIngressos() {
 function cadastro() {
   window.location.href = "/common/cadastro/cadastro.html";
 }
+
 

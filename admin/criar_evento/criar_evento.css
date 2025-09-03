@@ -87,7 +87,6 @@
    margin-top: 2rem;
  }
 
- /* 📱 Mobile adjustments */
  @media (max-width: 768px) {
    main {
      margin-left: 0;
@@ -102,7 +101,6 @@
 
    h1 {
      font-size: 20px;
-     /* padding-top: 30px; */
      margin-bottom: 30px;
    }
 
@@ -126,8 +124,6 @@
 
    main img {
      display: block;
-     /* margin: 0 auto 10px; */
-     /* width: 100px; */
    }
 
    footer {

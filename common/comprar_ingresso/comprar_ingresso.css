@@ -1,0 +1,65 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  main img {
+    width: 100%;
+    max-width: 190px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #titulo-evento {
+    margin-top: 100px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: rgb(185, 185, 185);
+    margin-top: 280px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      margin: 20px;
+      padding: 15px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+  }

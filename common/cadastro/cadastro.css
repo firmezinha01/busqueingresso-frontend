@@ -83,7 +83,6 @@
       padding: 2rem;
       color: rgb(185, 185, 185);
       margin-top: 2rem;
-      /* font-size: 0.9rem; */
   }
 
   @media (max-width: 768px) {
@@ -99,6 +98,32 @@
 
       button {
           width: 100%;
+      }
+
+
+      .ingresso {
+          flex-direction: column;
+          align-items: center;
+          margin-left: 0;
+          gap: 20px;
+      }
+
+      .ingressos {
+          width: 90%;
+          height: auto;
+          margin-top: 20px;
+      }
+
+      .ingressos img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px 5px 0 0;
+      }
+
+      h1 {
+          font-size: 16px;
+          padding: 10px;
+          margin-right: 0;
       }
 
       main {

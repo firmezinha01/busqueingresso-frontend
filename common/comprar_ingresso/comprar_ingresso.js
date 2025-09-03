@@ -1,7 +1,11 @@
-const params = new URLSearchParams(window.location.search);
-const evento = params.get('evento');
+function clicarLogo() {
+  window.location.href = "/index.html";
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+const evento = urlParams.get('evento');
 
 if (evento) {
-  document.getElementById('titulo-evento').textContent = `Compra de ingresso para: ${evento}`;
-  // Aqui você pode carregar os dados do evento, preço, etc.
+  document.getElementById('titulo-evento').textContent = evento;
+  localStorage.removeItem('eventoSelecionado');
 }

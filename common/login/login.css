@@ -34,7 +34,7 @@
     padding: 2em;
     border-radius: 8px;
     margin-top: 35px;
-    margin-right: 100px;
+    margin-right: 80px;
     text-align: center;
   }
 
@@ -98,7 +98,6 @@
     margin-top: 2rem;
   }
 
-  /* 📱 Mobile adjustments */
   @media (max-width: 768px) {
     main {
       flex-direction: column;
